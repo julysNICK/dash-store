@@ -55,5 +55,6 @@ import CardBox from './CardBox.vue';
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 </style>

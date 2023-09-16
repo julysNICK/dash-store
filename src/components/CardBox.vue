@@ -31,6 +31,7 @@ defineProps({
   width: calc(100% / 3 - 15px);
   padding: 15px 20px;
   background-color: var(--box1-color);
+  flex-wrap: wrap;
 }
 
 .boxes .box i {
@@ -60,5 +61,30 @@ defineProps({
 
 .boxes .box.box3 {
   background-color: var(--box3-color);
+}
+
+@media (max-width: 780px) {
+  .dashboard-content .boxes .box {
+    width: calc(100% / 2 - 15px);
+    margin-top: 15px;
+  }
+
+  .boxes .box .text {
+    font-size: 12px;
+  }
+
+  .boxes .box .number {
+    font-size: 20px;
+  }
+
+
+}
+
+@media (max-width:560px) {
+  .dashboard-content .boxes .box {
+    width: 100%;
+
+  }
+
 }
 </style>

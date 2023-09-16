@@ -195,5 +195,36 @@ nav.close~.dashboard {
     width: calc(100% - 250px);
   }
 
+  .activity .activity-data {
+    overflow-y: scroll;
+  }
+
+}
+
+
+
+
+@media (max-width:500px) {
+  nav~.dashboard {
+    left: 73px;
+    width: calc(100% - 73px);
+  }
+
+  nav.close~.dashboard {
+    left: 73px;
+    width: calc(100% - 73px);
+  }
+
+  nav~.dashboard .top {
+    left: 73px;
+    width: calc(100% - 73px);
+  }
+
+  nav.close~.dashboard .top {
+    left: 73px;
+    width: calc(100% - 73px);
+  }
+
+
 }
 </style>

@@ -325,5 +325,38 @@ body.dark .switch:before {
     left: 250px;
     width: calc(100% - 250px);
   }
+
+  @media (max-width:500px) {
+    nav {
+      width: 73px;
+    }
+
+    nav.close {
+      width: 73px;
+    }
+
+    nav .logo-name {
+      opacity: 1;
+      pointer-events: none;
+    }
+
+
+
+    nav.close .logo_name {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    nav li a .link-name {
+      opacity: 0;
+    }
+
+
+    nav.close li a .link-name {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+  }
 }
 </style>
