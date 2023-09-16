@@ -2,67 +2,85 @@
 // import { RouterLink, RouterView } from 'vue-router'
 // import HelloWorld from './components/HelloWorld.vue'
 
+import { onMounted } from "vue";
 
 
 const methodsClick = {
+  onloadBody() {
+
+    const body = document.querySelector("body");
+    const mode = localStorage.getItem("mode");
+
+    if (mode === "dark") {
+      body && body.classList.add("dark");
+    } else {
+      body && body.classList.remove("dark");
+    }
+  },
+
+
+
   toggleMode() {
-    console.log("chamei")
-    const body = document.querySelector('body')
-    body && body.classList.toggle('dark')
-  }
-}
+    console.log("chamei");
+    const body = document.querySelector("body");
+    body && body.classList.toggle("dark");
+
+    if (body && body.classList.contains("dark")) {
+      localStorage.setItem("mode", "dark");
+    } else {
+      localStorage.setItem("mode", "light");
+    }
+  },
+};
+
+onMounted(() => {
+
+  methodsClick.onloadBody();
+});
+
+
+
+
 </script>
 
 <template>
   <nav>
     <div class="logo-name">
       <div class="logo-image">
-        <img src="https://api.freelogodesign.org/assets/thumb/logo/a17b07eb64d341ffb1e09392aa3a1698_400.png" alt="logo">
+        <img src="https://api.freelogodesign.org/assets/thumb/logo/a17b07eb64d341ffb1e09392aa3a1698_400.png" alt="logo" />
       </div>
-      <span class="logo_name">
-        Julys
-      </span>
+      <span class="logo_name"> Julys </span>
     </div>
     <div class="menu-items">
       <ul class="nav-links">
         <li>
           <a href="#">
             <i class="uil uil-home"></i>
-            <span class="link-name">
-              Dashboard
-            </span>
+            <span class="link-name"> Dashboard </span>
           </a>
         </li>
         <li>
           <a href="#">
             <i class="uil uil-analytics"></i>
-            <span class="link-name">
-              Content
-            </span>
+            <span class="link-name"> Content </span>
           </a>
         </li>
         <li>
           <a href="#">
             <i class="uil uil-link"></i>
-            <span class="link-name">
-              Like
-            </span>
+            <span class="link-name"> Like </span>
           </a>
         </li>
         <li>
           <a href="#">
             <i class="uil uil-comment-alt-dots"></i>
-            <span class="link-name">
-              Comment
-            </span>
+            <span class="link-name"> Comment </span>
           </a>
         </li>
         <li>
           <a href="#">
             <i class="uil uil-share"></i>
-            <span class="link-name">
-              Share
-            </span>
+            <span class="link-name"> Share </span>
           </a>
         </li>
       </ul>
@@ -71,24 +89,17 @@ const methodsClick = {
         <li>
           <a href="#">
             <i class="uil uil-sign-out-alt"></i>
-            <span class="link-name">
-              Logout
-            </span>
+            <span class="link-name"> Logout </span>
           </a>
         </li>
         <li class="mode">
           <a href="#">
             <i class="uil uil-moon"></i>
-            <span class="link-name">
-              Dark Mode
-            </span>
+            <span class="link-name"> Dark Mode </span>
           </a>
 
           <div class="mode-toggle" @click="methodsClick.toggleMode">
-
-            <span class="switch">
-
-            </span>
+            <span class="switch"> </span>
           </div>
         </li>
       </ul>
@@ -97,9 +108,9 @@ const methodsClick = {
 </template>
 
 <style scoped>
-@import url('https://unicons.iconscout.com/release/v4.0.8/css/line.css');
+@import url("https://unicons.iconscout.com/release/v4.0.8/css/line.css");
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap");
 
 nav {
   position: fixed;
@@ -122,21 +133,17 @@ nav .logo-image {
   justify-content: center;
   justify-content: center;
   min-width: 45px;
-
-
 }
 
 nav .logo-image img {
   width: 40px;
   object-fit: cover;
   border-radius: 50%;
-
 }
 
 nav .logo-name {
   display: flex;
   align-items: center;
-
 }
 
 nav .logo-name .logo_name {
@@ -152,15 +159,12 @@ nav.close .logo_name {
   pointer-events: none;
 }
 
-
-
 nav .menu-items {
   margin-top: 20px;
   height: calc(100% - 90px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 }
 
 .menu-items li {
@@ -197,7 +201,6 @@ body.dark li a:hover:before {
   align-items: center;
   justify-content: center;
   color: var(--black-light-color);
-
 }
 
 .menu-items li a .link-name {
@@ -205,14 +208,12 @@ body.dark li a:hover:before {
   font-weight: 400;
   color: var(--black-light-color);
   transition: var(--tran-05);
-
 }
 
 nav.close li a .link-name {
   opacity: 0;
   pointer-events: none;
 }
-
 
 .nav-links li a:hover i,
 .nav-links li a:hover .link-name {
@@ -227,7 +228,6 @@ body.dark .nav-links li a:hover .link-name {
 .menu-items .logout-mode {
   padding-top: 20px;
   border-top: 1px solid var(--border-color);
-
 }
 
 .menu-items .mode {
@@ -273,9 +273,7 @@ body.dark .switch:before {
   left: calc(100% - 20px);
 }
 
-
-@media (max-width:1000px) {
-
+@media (max-width: 1000px) {
   nav {
     width: 73px;
   }
@@ -284,7 +282,6 @@ body.dark .switch:before {
     opacity: 0;
     pointer-events: none;
   }
-
 
   nav.close {
     width: 250px;
@@ -299,7 +296,6 @@ body.dark .switch:before {
     opacity: 1;
     pointer-events: auto;
   }
-
 
   nav.close .logo_name {
     opacity: 1;
@@ -326,7 +322,7 @@ body.dark .switch:before {
     width: calc(100% - 250px);
   }
 
-  @media (max-width:500px) {
+  @media (max-width: 500px) {
     nav {
       width: 73px;
     }
@@ -340,8 +336,6 @@ body.dark .switch:before {
       pointer-events: none;
     }
 
-
-
     nav.close .logo_name {
       opacity: 0;
       pointer-events: none;
@@ -351,12 +345,10 @@ body.dark .switch:before {
       opacity: 0;
     }
 
-
     nav.close li a .link-name {
       opacity: 0;
       pointer-events: none;
     }
-
   }
 }
 </style>
