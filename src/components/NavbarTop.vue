@@ -142,4 +142,11 @@ nav.close~.dashboard .top {
 
 
 }
+
+@media (max-width:500px) {
+  .dashboard .top .sidebar-toggle {
+
+    display: none;
+  }
+}
 </style>
