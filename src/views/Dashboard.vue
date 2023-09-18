@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Overview />
+    <Overview :title="titlePage" />
     <Activity />
   </div>
 </template>
@@ -9,6 +9,10 @@
 import Activity from '@/components/Activity.vue';
 import Overview from '@/components/Overview.vue';
 
+
+defineProps({
+  titlePage: String,
+});
 
 </script>
 

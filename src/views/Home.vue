@@ -4,7 +4,7 @@ import Dashboard from './Dashboard.vue';
 import NavbarDash from '@/components/NavbarDash.vue';
 import { ref } from 'vue';
 
-const namePage = ref('Dashboard');
+const namePage = ref('dashboard');
 
 
 const updateComponentName = (newValue: any) => {
@@ -20,11 +20,12 @@ const updateComponentName = (newValue: any) => {
 
     <div class="dashboard-content">
 
-      <Dashboard />
+      <Dashboard v-if="namePage === 'dashboard'" titlePage="Dashboard" />
 
-      <h1>
-        {{ namePage }}
-      </h1>
+
+      <Dashboard v-else-if="namePage === 'content'" titlePage="Content" />
+
+
 
     </div>
   </section>

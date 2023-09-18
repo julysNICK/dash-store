@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import CardBox from './CardBox.vue';
 
+defineProps({
+  title: String,
+});
+
 </script>
 
 <template>
@@ -8,7 +12,7 @@ import CardBox from './CardBox.vue';
     <div class="title">
       <i class="uil uil-tachometer-fast"></i>
       <span class="text">
-        Dashboard
+        {{ title }}
       </span>
     </div>
     <div class="boxes">
