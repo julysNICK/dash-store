@@ -1,11 +1,30 @@
 <script setup lang="ts">
-// import { RouterLink, RouterView } from 'vue-router'
-// import HelloWorld from './components/HelloWorld.vue'
 
-import { onMounted } from "vue";
+import { onMounted, toRefs } from "vue";
+
+
+
+const props = defineProps({
+  component_name: String,
+})
+
+const { component_name } = toRefs(props);
+
+const emit = defineEmits(["updateComponentName"]);
+
+
+
+
+const updateComponentName = (newString: string) => {
+  emit("updateComponentName", newString);
+};
+
+
+
 
 
 const methodsClick = {
+
   onloadBody() {
 
     const body = document.querySelector("body");
@@ -31,7 +50,12 @@ const methodsClick = {
       localStorage.setItem("mode", "light");
     }
   },
+
+
 };
+
+
+
 
 onMounted(() => {
 
@@ -53,13 +77,14 @@ onMounted(() => {
     </div>
     <div class="menu-items">
       <ul class="nav-links">
-        <li>
+        <li @click="updateComponentName('dashboard')">
           <a href="#">
             <i class="uil uil-home"></i>
             <span class="link-name"> Dashboard </span>
           </a>
         </li>
-        <li>
+
+        <li @click="updateComponentName('content')">
           <a href="#">
             <i class="uil uil-analytics"></i>
             <span class="link-name"> Content </span>
