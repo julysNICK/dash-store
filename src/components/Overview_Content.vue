@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import CardBox from './CardBox.vue';
 
-defineProps({
-  title: String,
-});
+
 
 </script>
 
@@ -12,13 +10,19 @@ defineProps({
     <div class="title">
       <i class="uil uil-tachometer-fast"></i>
       <span class="text">
-        DashBoard
+        Content
       </span>
     </div>
     <div class="boxes">
       <CardBox color="box1" title="Total Likes" icon="uil-thumbs-up" />
       <CardBox color="box2" title="Total Comments" icon="uil-comment-alt" />
       <CardBox color="box3" title="Total shares" icon="uil-share" />
+      <CardBox color="box1" title="Total Access" icon="uil-thumbs-up" />
+      <CardBox color="box2" title="Total Access Unique" icon="uil-comment-alt" />
+      <CardBox color="box3" title="Total Subiscribe" icon="uil-share" />
+      <CardBox color="box1" title="Minutes watched" icon="uil-thumbs-up" />
+      <CardBox color="box2" title="Hours watched" icon="uil-comment-alt" />
+      <CardBox color="box3" title="Many content" icon="uil-share" />
     </div>
 
   </div>
@@ -60,5 +64,6 @@ defineProps({
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  row-gap: 2rem;
 }
 </style>

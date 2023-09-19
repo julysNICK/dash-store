@@ -21,8 +21,6 @@ const updateComponentName = (newString: string) => {
 
 
 
-
-
 const methodsClick = {
 
   onloadBody() {
@@ -50,6 +48,7 @@ const methodsClick = {
       localStorage.setItem("mode", "light");
     }
   },
+
 
 
 };
@@ -91,7 +90,7 @@ onMounted(() => {
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#" @click="updateComponentName('likes')">
             <i class="uil uil-link"></i>
             <span class="link-name"> Like </span>
           </a>

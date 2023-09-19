@@ -3,6 +3,8 @@ import NavbarTop from '@/components/NavbarTop.vue';
 import Dashboard from './Dashboard.vue';
 import NavbarDash from '@/components/NavbarDash.vue';
 import { ref } from 'vue';
+import Content from './Content.vue';
+import Like from './Like.vue';
 
 const namePage = ref('dashboard');
 
@@ -23,9 +25,9 @@ const updateComponentName = (newValue: any) => {
       <Dashboard v-if="namePage === 'dashboard'" titlePage="Dashboard" />
 
 
-      <Dashboard v-else-if="namePage === 'content'" titlePage="Content" />
+      <Content v-else-if="namePage === 'content'" titlePage="Content" />
 
-
+      <Like v-else-if="namePage === 'likes'" titlePage="Likes" />
 
     </div>
   </section>

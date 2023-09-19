@@ -1,25 +1,17 @@
 <script setup lang="ts">
 import CardBox from './CardBox.vue';
 
-defineProps({
-  title: String,
-});
-
 </script>
 
 <template>
   <div class="overview">
     <div class="title">
-      <i class="uil uil-tachometer-fast"></i>
+      <!-- <i class="uil uil-tachometer-fast"></i> -->
       <span class="text">
-        DashBoard
+        Likes Page
       </span>
     </div>
-    <div class="boxes">
-      <CardBox color="box1" title="Total Likes" icon="uil-thumbs-up" />
-      <CardBox color="box2" title="Total Comments" icon="uil-comment-alt" />
-      <CardBox color="box3" title="Total shares" icon="uil-share" />
-    </div>
+
 
   </div>
 </template>
@@ -53,12 +45,5 @@ defineProps({
   font-weight: 500;
   margin-left: 10px;
   color: var(--text-color);
-}
-
-.dashboard-content .boxes {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
 </style>
