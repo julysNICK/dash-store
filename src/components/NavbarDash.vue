@@ -101,7 +101,7 @@ onMounted(() => {
             <span class="link-name"> Comment </span>
           </a>
         </li>
-        <li>
+        <li @click="updateComponentName('share')">
           <a href="#">
             <i class="uil uil-share"></i>
             <span class="link-name"> Share </span>

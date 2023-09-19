@@ -5,6 +5,7 @@ import NavbarDash from '@/components/NavbarDash.vue';
 import { ref } from 'vue';
 import Content from './Content.vue';
 import Like from './Like.vue';
+import Shared from './Shared.vue';
 
 const namePage = ref('dashboard');
 
@@ -28,6 +29,8 @@ const updateComponentName = (newValue: any) => {
       <Content v-else-if="namePage === 'content'" titlePage="Content" />
 
       <Like v-else-if="namePage === 'likes'" titlePage="Likes" />
+
+      <Shared v-else-if="namePage === 'share'" titlePage="Likes" />
 
     </div>
   </section>
